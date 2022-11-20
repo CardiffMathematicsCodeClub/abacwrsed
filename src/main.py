@@ -7,14 +7,13 @@ BACKGROUND = (55, 110, 100)
 
 SQUARE_ROOT_OF_TWO = math.sqrt(2)
 
+
 class Sprite(pygame.sprite.Sprite):
     def __init__(self, image, startx, starty):
         super().__init__()
 
-        self.image = pygame.image.load(image)
-        self.rect = self.image.get_rect()
-
-        self.rect.center = [startx, starty]
+        self.image = pygame.image.load(image).convert_alpha()
+        self.rect = self.image.get_rect(topleft=(startx, starty))
 
     def update(self):
         pass
@@ -26,13 +25,53 @@ class Sprite(pygame.sprite.Sprite):
         screen.blit(self.image, self.rect)
 
 
-class Player(Sprite):
+class Wall_H(Sprite):
     def __init__(self, startx, starty):
-        super().__init__("p1_front.png", startx, starty)
-        self.stand_image = self.image
-        self.jump_image = pygame.image.load("p1_jump.png")
+        super().__init__("TempWall_H.png", startx, starty)
 
-        self.walk_cycle = [pygame.image.load(f"p1_walk{i:0>2}.png") for i in range(1,12)]
+
+class Wall_V(Sprite):
+    def __init__(self, startx, starty):
+        super().__init__("TempWall_V.png", startx, starty)
+
+
+class Wall_H_JD(Sprite):
+    def __init__(self, startx, starty):
+        super().__init__("TempWall_H_JD.png", startx, starty)
+
+
+class Wall_VE_JU(Sprite):
+    def __init__(self, startx, starty):
+        super().__init__("TempWall_VE_JU.png", startx, starty)
+
+
+class Barrier(Sprite):
+    def __init__(self, startx, starty):
+        super().__init__("Barrier.png", startx, starty)
+
+
+class SadBarrier(Barrier):
+    def event(self, player):
+        player.stand_image = pygame.image.load("p1_front_cry.png")
+
+
+class HappyBarrier(Barrier):
+    def event(self, player):
+        player.stand_image = pygame.image.load("p1_front.png")
+
+
+class Player(pygame.sprite.Sprite):
+    def __init__(self, startx, starty):
+        super().__init__()
+        self.image = pygame.image.load("p1_front.png").convert_alpha()
+        self.rect = self.image.get_rect(center=(startx, starty))
+
+        self.stand_image = self.image
+        self.jump_image = pygame.image.load("p1_jump.png").convert_alpha()
+
+        self.walk_cycle = [
+            pygame.image.load(f"p1_walk{i:0>2}.png") for i in range(1, 12)
+        ]
         self.animation_index = 0
         self.facing_left = False
 
@@ -48,7 +87,7 @@ class Player(Sprite):
         if self.facing_left:
             self.image = pygame.transform.flip(self.image, True, False)
 
-        if self.animation_index < len(self.walk_cycle)-1:
+        if self.animation_index < len(self.walk_cycle) - 1:
             self.animation_index += 1
         else:
             self.animation_index = 0
@@ -72,12 +111,12 @@ class Player(Sprite):
         vsp = (keys[pygame.K_DOWN] - keys[pygame.K_UP]) * self.speed
 
         # MOVEMENT ANIMATION DISABLED FOR SIMPLIFIED TESTING [1]
-        
-        #if hsp < 0:
+
+        # if hsp < 0:
         #    self.facing_left = True
         #   self.walk_animation()
 
-        #else:
+        # else:
         #    self.facing_right = True
         #    self.walk_animation()
 
@@ -121,56 +160,32 @@ class Player(Sprite):
         return collide
 
 
-class Wall_H(Sprite):
-    def __init__(self, startx, starty):
-        super().__init__("TempWall_H.png", startx, starty)
-
-class Wall_V(Sprite):
-    def __init__(self, startx, starty):
-        super().__init__("TempWall_V.png", startx, starty)
-
-class Wall_H_JD(Sprite):
-    def __init__(self, startx, starty):
-        super().__init__("TempWall_H_JD.png", startx, starty)
-
-class Wall_VE_JU(Sprite):
-    def __init__(self, startx, starty):
-        super().__init__("TempWall_VE_JU.png", startx, starty)
-
-class Barrier(Sprite):
-    def __init__(self, startx, starty):
-        super().__init__("Barrier.png", startx, starty)
-
-class SadBarrier(Barrier):
-    def event(self, player):
-        player.stand_image = pygame.image.load("p1_front_cry.png")
-
-class HappyBarrier(Barrier):
-    def event(self, player):
-        player.stand_image = pygame.image.load("p1_front.png")
-
 def main():
     pygame.init()
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     clock = pygame.time.Clock()
 
-    player = Player(100, 900)          #Player start location [WIDTH / 2, HEIGHT / 2]
-    
+    player = Player(100, 900)  # Player start location [WIDTH / 2, HEIGHT / 2]
+
     boxes = pygame.sprite.Group()
 
     for bx in range(0, 2000, 70):
-        boxes.add(Wall_H(bx, 100))                              #Wall horizontal top row
-        boxes.add(Wall_H(bx, 1035))                             #Wall horizontal bottom row
+        boxes.add(Wall_H(bx, 100))  # Wall horizontal top row
+        boxes.add(Wall_H(bx, 1035))  # Wall horizontal bottom row
 
     for bx in range(5):
         for by in range(170, 660, 70):
-            boxes.add(Wall_V(bx * 490, by))                     #Wall vertical
-            boxes.add(Wall_VE_JU(bx * 490, 730))                #Wall vertical end blocks
-            boxes.add(Wall_H_JD(bx * 490, 100))                 #Wall horizontal top junctions
+            boxes.add(Wall_V(bx * 490, by))  # Wall vertical
+            boxes.add(Wall_VE_JU(bx * 490, 730))  # Wall vertical end blocks
+            boxes.add(Wall_H_JD(bx * 490, 100))  # Wall horizontal top junctions
         for i in range(3):
-            boxes.add(Wall_H(((i - 1) * 70) + (bx * 490), 660)) #Wall horizontal middle chunks
+            boxes.add(
+                Wall_H(((i - 1) * 70) + (bx * 490), 660)
+            )  # Wall horizontal middle chunks
         for i in range(3):
-            boxes.add(Barrier((i * 70) + 630, 660))             #Barrier blocking access to one room
+            boxes.add(
+                Barrier((i * 70) + 630, 660)
+            )  # Barrier blocking access to one room
 
         boxes.add(SadBarrier((3 * 70) + 630, 800))
         boxes.add(HappyBarrier((6 * 70) + 630, 800))
