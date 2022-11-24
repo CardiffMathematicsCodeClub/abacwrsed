@@ -19,27 +19,27 @@ class Sprite(pygame.sprite.Sprite):
 
 class Wall_H(Sprite):
     def __init__(self, startx, starty, group):
-        super().__init__("TempWall_H.png", startx, starty, group)
+        super().__init__("Graphics\TempWall_H.png", startx, starty, group)
 
 
 class Wall_V(Sprite):
     def __init__(self, startx, starty, group):
-        super().__init__("TempWall_V.png", startx, starty, group)
+        super().__init__("Graphics\TempWall_V.png", startx, starty, group)
 
 
 class Wall_H_JD(Sprite):
     def __init__(self, startx, starty, group):
-        super().__init__("TempWall_H_JD.png", startx, starty, group)
+        super().__init__("Graphics\TempWall_H_JD.png", startx, starty, group)
 
 
 class Wall_VE_JU(Sprite):
     def __init__(self, startx, starty, group):
-        super().__init__("TempWall_VE_JU.png", startx, starty, group)
+        super().__init__("Graphics\TempWall_VE_JU.png", startx, starty, group)
 
 
 class Barrier(Sprite):
     def __init__(self, startx, starty, group):
-        super().__init__("Barrier.png", startx, starty, group)
+        super().__init__("Graphics\Barrier.png", startx, starty, group)
 
 
 class SadBarrier(Barrier):

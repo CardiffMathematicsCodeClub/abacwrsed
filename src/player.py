@@ -8,11 +8,11 @@ class Player(pygame.sprite.Sprite):
     def __init__(self, startx, starty, group, boxes):
         super().__init__(group)
 
-        self.stand_image = pygame.image.load("p1_front.png").convert_alpha()
-        self.cry_image = pygame.image.load("p1_front_cry.png").convert_alpha()
-        self.jump_image = pygame.image.load("p1_jump.png").convert_alpha()
+        self.stand_image = pygame.image.load("Graphics/p1_front.png").convert_alpha()
+        self.cry_image = pygame.image.load("Graphics/p1_front_cry.png").convert_alpha()
+        self.jump_image = pygame.image.load("Graphics/p1_jump.png").convert_alpha()
         self.walk_cycle = [
-            pygame.image.load(f"p1_walk{i:0>2}.png") for i in range(1, 12)
+            pygame.image.load(f"Graphics/p1_walk{i:0>2}.png") for i in range(1, 12)
         ]
         
         self.image = self.stand_image
