@@ -19,9 +19,6 @@ class Player(pygame.sprite.Sprite):
         self.cry_image = pygame.image.load(
             "Graphics/players/p1_front_cry.png"
         ).convert_alpha()
-        self.jump_image = pygame.image.load(
-            "Graphics/players/p1_jump.png"
-        ).convert_alpha()
         self.walk_cycle = [
             pygame.image.load(f"Graphics/players/p1_walk{i:0>2}.png")
             for i in range(1, 12)
@@ -36,10 +33,6 @@ class Player(pygame.sprite.Sprite):
         self.facing_left = False
 
         self.speed = 8
-        self.jumpspeed = 20
-        self.vsp = 0
-        self.gravity = 0
-        self.min_jumpspeed = 4
         self.prev_key = pygame.key.get_pressed()
 
     def walk_animation(self):
@@ -54,11 +47,6 @@ class Player(pygame.sprite.Sprite):
             self.animation_index += 1
         else:
             self.animation_index = 0
-
-    def jump_animation(self):
-        self.image = self.jump_image
-        if self.facing_left:
-            self.image = pygame.transform.flip(self.image, True, False)
 
     def update(self):
         """
@@ -94,14 +82,7 @@ class Player(pygame.sprite.Sprite):
             hsp /= SQUARE_ROOT_OF_TWO
             vsp /= SQUARE_ROOT_OF_TWO
 
-        # TODO This is a relic, should be removed if we do not use jumping.
-        if self.prev_key[pygame.K_UP] and not keys[pygame.K_UP]:
-            if self.vsp < -self.min_jumpspeed:
-                self.vsp = -self.min_jumpspeed
-
         self.prev_key = keys
-
-        # movement
         self.move(hsp, vsp)
 
     def move(self, x, y):
