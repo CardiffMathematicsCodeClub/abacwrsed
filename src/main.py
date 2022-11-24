@@ -8,6 +8,8 @@ from utils import create_custom_walls
 WIDTH = 1920
 HEIGHT = 1080
 BACKGROUND = (55, 110, 100)
+PLAYER_START_X = 100
+PLAYER_START_Y = 900
 
 
 def main():
@@ -16,25 +18,18 @@ def main():
     clock = pygame.time.Clock()
 
     camera_group = CameraGroup()
-    boxes = create_custom_walls(camera_group)
+    boxes = create_custom_walls(camera_group=camera_group)
 
     player = Player(
-        100, 900, camera_group, boxes
-    )  # Player start location [WIDTH / 2, HEIGHT / 2]
+        startx=PLAYER_START_X, starty=PLAYER_START_Y, group=camera_group, boxes=boxes
+    )
 
     while True:
         pygame.event.pump()
-        # player.update(boxes)
-
-        # Draw loop
         screen.fill(BACKGROUND)
-        # player.draw(screen)
-        # boxes.draw(screen)
-        # pygame.display.flip()
 
         camera_group.update()
         camera_group.custom_draw(player)
-
         pygame.display.update()
 
         clock.tick(60)
