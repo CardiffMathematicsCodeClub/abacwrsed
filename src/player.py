@@ -4,17 +4,29 @@ import pygame
 
 SQUARE_ROOT_OF_TWO = math.sqrt(2)
 
+
 class Player(pygame.sprite.Sprite):
+    """
+    The Player class where the player is defined. The player is a sprite that
+    can move around the map and interact with the environment.
+    """
     def __init__(self, startx, starty, group, boxes):
         super().__init__(group)
 
-        self.stand_image = pygame.image.load("Graphics/players/p1_front.png").convert_alpha()
-        self.cry_image = pygame.image.load("Graphics/players/p1_front_cry.png").convert_alpha()
-        self.jump_image = pygame.image.load("Graphics/players/p1_jump.png").convert_alpha()
+        self.stand_image = pygame.image.load(
+            "Graphics/players/p1_front.png"
+        ).convert_alpha()
+        self.cry_image = pygame.image.load(
+            "Graphics/players/p1_front_cry.png"
+        ).convert_alpha()
+        self.jump_image = pygame.image.load(
+            "Graphics/players/p1_jump.png"
+        ).convert_alpha()
         self.walk_cycle = [
-            pygame.image.load(f"Graphics/players/p1_walk{i:0>2}.png") for i in range(1, 12)
+            pygame.image.load(f"Graphics/players/p1_walk{i:0>2}.png")
+            for i in range(1, 12)
         ]
-        
+
         self.image = self.stand_image
         self.rect = self.image.get_rect(center=(startx, starty))
 
@@ -31,6 +43,9 @@ class Player(pygame.sprite.Sprite):
         self.prev_key = pygame.key.get_pressed()
 
     def walk_animation(self):
+        """
+        Animates the player walking.
+        """
         self.image = self.walk_cycle[self.animation_index]
         if self.facing_left:
             self.image = pygame.transform.flip(self.image, True, False)
@@ -47,7 +62,7 @@ class Player(pygame.sprite.Sprite):
 
     def update(self):
         """
-        TODO Document this method.
+        Update the player's position and orientation.
         """
         hsp = 0
         vsp = 0
@@ -63,18 +78,21 @@ class Player(pygame.sprite.Sprite):
         # if hsp < 0:
         #    self.facing_left = True
         #    self.walk_animation()
-
-        # else:
+        # elif hsp > 0:
         #    self.facing_left = False
         #    self.walk_animation()
+        # elif vsp != 0:
+        #     self.walk_animation()
+        # elif hsp == 0:
+        #     self.image = self.stand_image
+        #     if self.facing_left:
+        #         self.image = pygame.transform.flip(self.image, True, False)
 
         # END OF DISABLE [1]
 
         if hsp * vsp != 0:
             hsp /= SQUARE_ROOT_OF_TWO
             vsp /= SQUARE_ROOT_OF_TWO
-        if hsp == vsp == 0:
-            self.image = self.image
 
         # TODO This is a relic, should be removed if we do not use jumping.
         if self.prev_key[pygame.K_UP] and not keys[pygame.K_UP]:
@@ -87,6 +105,10 @@ class Player(pygame.sprite.Sprite):
         self.move(hsp, vsp)
 
     def move(self, x, y):
+        """
+        Make sure the player doesn't collide with any other objects and move
+        the player in the x and y directions.
+        """
         dx = x
         dy = y
 
@@ -99,6 +121,9 @@ class Player(pygame.sprite.Sprite):
         self.rect.move_ip([dx, dy])
 
     def check_collision(self, x, y, grounds):
+        """
+        Check if the player collides with any other objects.
+        """
         self.rect.move_ip([x, y])
         collide = pygame.sprite.spritecollideany(self, grounds)
         if collide:

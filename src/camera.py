@@ -1,5 +1,6 @@
 import pygame
 
+
 class CameraGroup(pygame.sprite.Group):
     """
     The CameraGroup class is a subclass of pygame.sprite.Group that
@@ -78,7 +79,7 @@ class CameraGroup(pygame.sprite.Group):
             self.camera_rect.y -= self.keyboard_camera_speed
         if target.prev_key[pygame.K_s]:
             self.camera_rect.y += self.keyboard_camera_speed
-        
+
         self.offset.x = self.camera_rect.left - self.camera_borders["left"]
         self.offset.y = self.camera_rect.top - self.camera_borders["top"]
 
