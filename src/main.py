@@ -7,7 +7,7 @@ from utils import create_custom_walls
 
 WIDTH = 1920
 HEIGHT = 1080
-BACKGROUND = (55, 110, 100)
+BACKGROUND = (50, 0, 0)
 PLAYER_START_X = 100
 PLAYER_START_Y = 900
 
