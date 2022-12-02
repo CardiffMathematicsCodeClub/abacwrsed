@@ -23,13 +23,17 @@ def get_building_parameters(config_path):
 
     with open(config_path, 'r') as f:
         config = yaml.safe_load(f)
-    print(config)
 
-    position = (int(config['position_x']), int(config['position_y']))
-    length = int(config['length'])
-    height = int(config['height'])
+    parameters = {}
+    for room in config:
+        for room_id, value in room.items():
+            room_parameters = value
+            position = (int(room_parameters['position_x']), int(room_parameters['position_y']))
+            length = int(room_parameters['length'])
+            height = int(room_parameters['height'])
+            parameters[room_id] = (position, length, height)
 
-    return position, length, height
+    return parameters
 
 def building_configuration(boxes, camera_group, position, length, height):
     """
@@ -53,8 +57,9 @@ def create_custom_walls(camera_group):
     """
     boxes = pygame.sprite.Group()
     config_path = "./rooms/hub.yml"
-    position, length, height = get_building_parameters(config_path=config_path)
-    boxes = building_configuration(boxes=boxes, camera_group=camera_group, position=position, length=length, height=height)
+    parameters = get_building_parameters(config_path=config_path)
+    for _, (position, length, height) in parameters.items():
+        boxes.add(building_configuration(boxes=boxes, camera_group=camera_group, position=position, length=length, height=height))
 
 
     return boxes
