@@ -11,7 +11,8 @@ from terrain import (
     HappyBarrier,
 )
 
-def building_configuration(boxes, camera_group, room):
+def get_building_argumets(room):
+
     """
     Function takes .yml file for specific room with:
     - position : (x, y) - left upper corner
@@ -28,6 +29,14 @@ def building_configuration(boxes, camera_group, room):
     position = (int(config['position_x']), int(config['position_y']))
     length = int(config['length'])
     height = int(config['height'])
+
+    return position, length, height
+
+def building_configuration(boxes, camera_group, room):
+    """
+    Builds a room from position, length and height
+    """
+    position, length, height = get_building_argumets(room)
 
     x, y = position
 
@@ -47,22 +56,5 @@ def create_custom_walls(camera_group):
     """
     boxes = pygame.sprite.Group()
     boxes = building_configuration(boxes, camera_group, 'Rooms\hub.yml')
-
-#    boxes.add(SadBarrier((3 * 70) + 700, 800, camera_group))
-#    boxes.add(HappyBarrier((6 * 70) + 700, 800, camera_group))
-
-#    for bx in range(0, 2000, 70):
-#        boxes.add(Wall_H(bx, 100, camera_group))
-#        boxes.add(Wall_H(bx, 1035, camera_group))
-#
-#    for bx in range(5):
-#        for by in range(170, 660, 70):
-#            boxes.add(Wall_V(bx * 490, by, camera_group))
-#            boxes.add(Wall_VE_JU(bx * 490, 730, camera_group))
-#            boxes.add(Wall_H_JD(bx * 490, 100, camera_group))
-#        for i in range(3):
-#            boxes.add(Wall_H(((i - 1) * 70) + (bx * 490), 660, camera_group))
-#        for i in range(3):
-#            boxes.add(Barrier((i * 70) + 630, 660, camera_group))
 
     return boxes
