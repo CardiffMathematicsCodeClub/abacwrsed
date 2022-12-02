@@ -11,7 +11,7 @@ from terrain import (
     HappyBarrier,
 )
 
-def get_building_argumets(room):
+def get_building_parameters(config_path):
     """
     Function takes .yml file for specific room with:
     - position : (x, y) - left upper corner
@@ -21,7 +21,7 @@ def get_building_argumets(room):
     Variable room contains path to .yml file with that room configuration.
     """
 
-    with open(room, 'r') as f:
+    with open(config_path, 'r') as f:
         config = yaml.safe_load(f)
     print(config)
 
@@ -31,11 +31,10 @@ def get_building_argumets(room):
 
     return position, length, height
 
-def building_configuration(boxes, camera_group, room):
+def building_configuration(boxes, camera_group, position, length, height):
     """
     Builds a room from position, length and height
     """
-    position, length, height = get_building_argumets(room)
     x, y = position
 
     for dx in range(0, length, 70):
@@ -53,7 +52,9 @@ def create_custom_walls(camera_group):
     Creates a custom set of walls for the game
     """
     boxes = pygame.sprite.Group()
-    boxes = building_configuration(boxes, camera_group, 'Rooms\hub.yml')
+    config_path = "./rooms/hub.yml"
+    position, length, height = get_building_parameters(config_path=config_path)
+    boxes = building_configuration(boxes=boxes, camera_group=camera_group, position=position, length=length, height=height)
 
 
     return boxes
