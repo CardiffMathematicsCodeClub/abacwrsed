@@ -12,7 +12,6 @@ from terrain import (
 )
 
 def get_building_argumets(room):
-
     """
     Function takes .yml file for specific room with:
     - position : (x, y) - left upper corner
@@ -37,7 +36,6 @@ def building_configuration(boxes, camera_group, room):
     Builds a room from position, length and height
     """
     position, length, height = get_building_argumets(room)
-
     x, y = position
 
     for dx in range(0, length, 70):
@@ -56,5 +54,6 @@ def create_custom_walls(camera_group):
     """
     boxes = pygame.sprite.Group()
     boxes = building_configuration(boxes, camera_group, 'Rooms\hub.yml')
+
 
     return boxes
