@@ -1,8 +1,36 @@
-position_x : 0
-position_y : 0
-length : 700
-height : 700
-name : Vince's Office
-
-# in future: add barriers etc.
-# for doors: make them as objects like barriers, but add a characteristic (closed/open), that can be changed through out the game.
+- 2.52:
+    position_x : 0
+    position_y : 0
+    length : 700
+    height : 700
+    name : Vince's Office
+- 2.54:
+    position_x : 0
+    position_y : -700
+    length : 700
+    height : 700
+    name : Geraint's Office
+- 2.56:
+    position_x : 0
+    position_y : -1400
+    length : 700
+    height : 700
+    name : Mark's Office
+- 2.58:
+    position_x : 0
+    position_y : -2100
+    length : 700
+    height : 700
+    name : Paul's Office
+- 2.60:
+    position_x : 700
+    position_y : 0
+    length : 700
+    height : 700
+    name : Michalis's Office
+- 2.61:
+    position_x : 1400
+    position_y : 0
+    length : 500
+    height : 350
+    name : Charlie's Office
