@@ -18,10 +18,10 @@ def main():
     clock = pygame.time.Clock()
 
     camera_group = CameraGroup()
-    boxes = create_custom_walls(camera_group=camera_group)
+    boxes, collectibles, environment = create_custom_walls(camera_group=camera_group)
 
     player = Player(
-        startx=PLAYER_START_X, starty=PLAYER_START_Y, group=camera_group, boxes=boxes
+        startx=PLAYER_START_X, starty=PLAYER_START_Y, group=camera_group, boxes=boxes, collectibles=collectibles, environment=environment
     )
 
     while True:

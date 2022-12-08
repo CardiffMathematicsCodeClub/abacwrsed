@@ -10,7 +10,7 @@ class Player(pygame.sprite.Sprite):
     The Player class where the player is defined. The player is a sprite that
     can move around the map and interact with the environment.
     """
-    def __init__(self, startx, starty, group, boxes):
+    def __init__(self, startx, starty, group, boxes, collectibles, environment):
         super().__init__(group)
 
         self.stand_image = pygame.image.load(
@@ -28,6 +28,8 @@ class Player(pygame.sprite.Sprite):
         self.rect = self.image.get_rect(center=(startx, starty))
 
         self.boxes = boxes
+        self.collectibles = collectibles
+        self.environment = environment
 
         self.animation_index = 0
         self.facing_left = False
@@ -54,7 +56,7 @@ class Player(pygame.sprite.Sprite):
         """
         hsp = 0
         vsp = 0
-        onground = self.check_collision(0, 1, grounds=self.boxes)
+        onground = self.check_collision(0, 1)
         # check keys
         keys = pygame.key.get_pressed()
 
@@ -93,22 +95,26 @@ class Player(pygame.sprite.Sprite):
         dx = x
         dy = y
 
-        while self.check_collision(0, dy, self.boxes):
+        while self.check_collision(0, dy):
             dy -= np.sign(dy)
 
-        while self.check_collision(dx, dy, self.boxes):
+        while self.check_collision(dx, dy):
             dx -= np.sign(dx)
 
         self.rect.move_ip([dx, dy])
 
-    def check_collision(self, x, y, grounds):
+    def check_collision(self, x, y):
         """
         Check if the player collides with any other objects.
         """
         self.rect.move_ip([x, y])
-        collide = pygame.sprite.spritecollideany(self, grounds)
-        if collide:
-            collide.event(player=self)
+        collide_boxes = pygame.sprite.spritecollideany(self, self.boxes)
+        if collide_boxes:
+            collide_boxes.event(player=self)
+
+        collide_collectibles = pygame.sprite.spritecollideany(self, self.collectibles)
+        if collide_collectibles:
+            collide_collectibles.event(player=self)
 
         self.rect.move_ip([-x, -y])
-        return collide
+        return collide_boxes
