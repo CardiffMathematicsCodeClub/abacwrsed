@@ -79,3 +79,15 @@ class HappyBarrier(Barrier):
     """
     def event(self, player):
         player.image = player.stand_image
+
+
+class Collectible(Sprite):
+    """
+    Collectible sprite.
+    """
+    def __init__(self, startx, starty, group):
+        super().__init__("Graphics/terrain/boxAlt.png", startx, starty, group)
+
+    def event(self, player):
+        self.kill()
+
