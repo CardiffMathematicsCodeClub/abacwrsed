@@ -9,6 +9,7 @@ from terrain import (
     Barrier,
     SadBarrier,
     HappyBarrier,
+    Collectible,
 )
 
 def get_building_parameters(config_path):
@@ -51,15 +52,39 @@ def building_configuration(boxes, camera_group, position, length, height):
     return boxes
 
 
+def place_collectibles(collectibles, camera_group):
+    """
+    Places collectibles in the room
+    """
+    collectibles.add(Collectible(300, 900, camera_group))
+    collectibles.add(Collectible(400, 900, camera_group))
+    collectibles.add(Collectible(500, 900, camera_group))
+    return collectibles
+
+
+def place_environment_objects(environment, camera_group):
+    """
+    Places environment objects in the room
+    """
+    environment.add(Barrier(300, 1200, camera_group))
+    environment.add(Barrier(400, 1200, camera_group))
+    environment.add(Barrier(500, 1200, camera_group))
+    return environment
+
 def create_custom_walls(camera_group):
     """
     Creates a custom set of walls for the game
     """
     boxes = pygame.sprite.Group()
+    collectibles = pygame.sprite.Group()
+    environment = pygame.sprite.Group()
+
     config_path = "./rooms/hub.yml"
     parameters = get_building_parameters(config_path=config_path)
     for _, (position, length, height) in parameters.items():
         boxes.add(building_configuration(boxes=boxes, camera_group=camera_group, position=position, length=length, height=height))
 
+    collectibles = place_collectibles(collectibles=collectibles, camera_group=camera_group)
+    environment = place_environment_objects(environment=environment, camera_group=camera_group)
 
-    return boxes
+    return boxes, collectibles, environment
