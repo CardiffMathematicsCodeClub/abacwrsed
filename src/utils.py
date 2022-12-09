@@ -45,7 +45,7 @@ def building_configuration(boxes, camera_group, position, length, height):
     for dx in range(0, length, 70):
             boxes.add(Wall_H(x + dx, y, camera_group))
             boxes.add(Wall_H(x + dx, y + height, camera_group))
-    for dy in range(0, height + 70, 70):
+    for dy in range(0, height, 70):
             boxes.add(Wall_V(x, y + dy, camera_group))
             boxes.add(Wall_V(x + length, y + dy, camera_group))
 
