@@ -4,129 +4,196 @@
     length : 550
     height : 780
     name : 2.50
+    door_position_x : 200
+    door_position_y : -250
+
 - 2.49:
     position_x : 550
     position_y : -1000
     length : 550
     height : 780
     name : 2.49
+    door_position_x : 750
+    door_position_y : -250
+
 - 2.48:
     position_x : 1100
     position_y : -1000
     length : 550
     height : 780
     name : 2.49
+    door_position_x : 1400
+    door_position_y : -250
+
 - 2.47:
     position_x : 1650
     position_y : -1000
     length : 550
     height : 780
     name : 2.49
+    door_position_x : 1950
+    door_position_y : -250
+
 - upper_left_boundary:
     position_x : 0
     position_y : -250
     length : 0
     height : 600
     name : boundary
+    # TODO: Find a better way to handle the absence of a door in a room
+    door_position_x : -10000
+    door_position_y : -10000
+
 - water_fountain_defense:
     position_x : 779
     position_y : 220
     length : 1
     height : 140
     name : water_fountain_defense
+    door_position_x : -10000
+    door_position_y : -10000
+
 - 2.52:
     position_x : 0
     position_y : 350
     length : 780
     height : 550
     name : 2.52
+    door_position_x : 780
+    door_position_y : 800
+
 - 2.53:
     position_x : 1300
     position_y : 830
     length : 500
     height : 1700
     name : 2.53
+    door_position_x : 1300
+    door_position_y : 950
+
 - 2.54:
     position_x : 0
     position_y : 900
     length : 780
     height : 550
     name : 2.54
+    door_position_x : 780
+    door_position_y : 1300
+
 - 2.55:
     position_x : 0
     position_y : 1450
     length : 780
     height : 550
     name : 2.55
+    door_position_x : 780
+    door_position_y : 1900
+
 - 2.56:
     position_x : 0
     position_y : 2000
     length : 780
     height : 550
     name : 2.56
+    door_position_x : 780
+    door_position_y : 2350
+
 - lower_left_boundary:
     position_x : 0
     position_y : 2550
     length : 0
     height : 300
     name : boundary
+    door_position_x : 0
+    door_position_y : 0
+
 - 2.57:
     position_x : 0
     position_y : 2850
     length : 550
     height : 780
     name : 2.57
+    door_position_x : 420
+    door_position_y : 2850
+
 - lower_boundary:
     position_x : 550
     position_y : 3630
     length : 550
     height : 0
     name : boundary
+    door_position_x : -10000
+    door_position_y : -10000
+
 - 2.58:
     position_x : 1100
     position_y : 2850
     length : 550
     height : 780
     name : 2.58
+    door_position_x : 1220
+    door_position_y : 2850
+
 - 2.59:
     position_x : 1650
     position_y : 2850
     length : 550
     height : 780
     name : 2.59
+    door_position_x : 1750
+    door_position_y : 2850
+
 - 2.60:
     position_x : 2200
     position_y : 2850
     length : 550
     height : 780
     name : 2.60
+    door_position_x : 2300
+    door_position_y : 2850
+
 - 2.61:
     position_x : 2750
     position_y : 2850
     length : 550
     height : 780
     name : 2.61
+    door_position_x : 2850
+    door_position_y : 2850
+
 - 2.63:
     position_x : 3300
     position_y : 2850
     length : 550
     height : 780
     name : 2.63
+    door_position_x : 3400
+    door_position_y : 2850
+
 - 2.64:
     position_x : 3850
     position_y : 2850
     length : 550
     height : 780
     name : 2.64
+    door_position_x : 3950
+    door_position_y : 2850
+
 - 2.65:
     position_x : 4400
     position_y : 2850
     length : 550
     height : 780
     name : 2.65
+    door_position_x : 4500
+    door_position_y : 2850
+
 - 2.66:
     position_x : 4950
     position_y : 2850
     length : 550
     height : 780
     name : 2.66
+    door_position_x : 5050
+    door_position_y : 2850
+
