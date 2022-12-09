@@ -1,36 +1,132 @@
+- 2.50:
+    position_x : 0
+    position_y : -1000
+    length : 550
+    height : 780
+    name : 2.50
+- 2.49:
+    position_x : 550
+    position_y : -1000
+    length : 550
+    height : 780
+    name : 2.49
+- 2.48:
+    position_x : 1100
+    position_y : -1000
+    length : 550
+    height : 780
+    name : 2.49
+- 2.47:
+    position_x : 1650
+    position_y : -1000
+    length : 550
+    height : 780
+    name : 2.49
+- upper_left_boundary:
+    position_x : 0
+    position_y : -250
+    length : 0
+    height : 600
+    name : boundary
+- water_fountain_defense:
+    position_x : 779
+    position_y : 220
+    length : 1
+    height : 140
+    name : water_fountain_defense
 - 2.52:
     position_x : 0
-    position_y : 0
-    length : 700
-    height : 700
-    name : Vince's Office
+    position_y : 350
+    length : 780
+    height : 550
+    name : 2.52
+- 2.53:
+    position_x : 1300
+    position_y : 830
+    length : 500
+    height : 1700
+    name : 2.53
 - 2.54:
     position_x : 0
-    position_y : -700
-    length : 700
-    height : 700
-    name : Geraint's Office
+    position_y : 900
+    length : 780
+    height : 550
+    name : 2.54
+- 2.55:
+    position_x : 0
+    position_y : 1450
+    length : 780
+    height : 550
+    name : 2.55
 - 2.56:
     position_x : 0
-    position_y : -1400
-    length : 700
-    height : 700
-    name : Mark's Office
-- 2.58:
+    position_y : 2000
+    length : 780
+    height : 550
+    name : 2.56
+- lower_left_boundary:
     position_x : 0
-    position_y : -2100
-    length : 700
-    height : 700
-    name : Paul's Office
+    position_y : 2550
+    length : 0
+    height : 300
+    name : boundary
+- 2.57:
+    position_x : 0
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.57
+- lower_boundary:
+    position_x : 550
+    position_y : 3630
+    length : 550
+    height : 0
+    name : boundary
+- 2.58:
+    position_x : 1100
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.58
+- 2.59:
+    position_x : 1650
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.59
 - 2.60:
-    position_x : 700
-    position_y : 0
-    length : 700
-    height : 700
-    name : Michalis's Office
+    position_x : 2200
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.60
 - 2.61:
-    position_x : 1400
-    position_y : 0
-    length : 500
-    height : 350
-    name : Charlie's Office
+    position_x : 2750
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.61
+- 2.63:
+    position_x : 3300
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.63
+- 2.64:
+    position_x : 3850
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.64
+- 2.65:
+    position_x : 4400
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.65
+- 2.66:
+    position_x : 4950
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.66
