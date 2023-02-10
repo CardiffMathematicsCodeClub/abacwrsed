@@ -65,7 +65,7 @@
 - 2.53:
     position_x : 1300
     position_y : 830
-    length : 500
+    length : 1300
     height : 1700
     name : 2.53
     door_position_x : 1300
@@ -196,4 +196,169 @@
     name : 2.66
     door_position_x : 5050
     door_position_y : 2850
+
+- 2.67:
+    position_x : 5500
+    position_y : 2850
+    length : 1200
+    height : 780
+    name : 2.67
+    door_position_x : 5600
+    door_position_y : 2850
+
+- 2.01:
+    position_x : 6700
+    position_y : 2850
+    length : 1650
+    height : 780
+    name : 2.68
+    door_position_x : 8200
+    door_position_y : 2850
+
+- 2.02:
+    position_x : 8350
+    position_y : 2850
+    length : 1200
+    height : 780
+    name : 2.69
+    door_position_x : 9350
+    door_position_y : 2850
+
+- 2.03:
+    position_x : 9550
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.70
+    door_position_x : 9650
+    door_position_y : 2850
+
+- 2.04:
+    position_x : 10100
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.71
+    door_position_x : 10200
+    door_position_y : 2850
+
+- 2.05:
+    position_x : 10650
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.72
+    door_position_x : 10750
+    door_position_y : 2850
+
+- 2.06:
+    position_x : 11200
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.73
+    door_position_x : 11300
+    door_position_y : 2850
+
+- 2.07:
+    position_x : 11750
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.74
+    door_position_x : 11850
+    door_position_y : 2850
+
+- 2.08:
+    position_x : 12300
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.75
+    door_position_x : 12400
+    door_position_y : 2850 
+
+- 2.09:
+    position_x : 12850
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.76
+    door_position_x : 12950
+    door_position_y : 2850
+
+- 2.10:
+    position_x : 13400
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.77
+    door_position_x : 13500
+    door_position_y : 2850
+
+- lower_right_boundary:
+    position_x : 13950
+    position_y : 3630
+    length : 550
+    height : 0
+    name : lower_right_boundary
+    door_position_x : 14050
+    door_position_y : 2850
+
+- 2.11:
+    position_x : 14500
+    position_y : 2850
+    length : 550
+    height : 780
+    name : 2.79
+    door_position_x : 14610
+    door_position_y : 2850
+
+
+# TODO: Break down this room into cupboard + lift + stairs + extra room
+- left_elevator_room:
+    position_x : 2200
+    position_y : -1000
+    length : 2200
+    height : 1040
+    name : elevator_room
+    # TODO: The door needs to be larger
+    door_position_x : 4000
+    door_position_y : -80
+
+- bathroom_left_1:
+    position_x : 4200
+    position_y : -1000
+    length : 800
+    height : 580
+    name : bathroom_left
+    door_position_x : 4300
+    door_position_y : -420
+
+- bathroom_left_2:
+    position_x : 4600
+    position_y : -420
+    length : 400
+    height : 340
+    name : bathroom_left_small
+    door_position_x : 4600
+    door_position_y : -250
+
+- cupboard_2:
+    position_x : 5000
+    position_y : -1000
+    length : 400
+    height : 920
+    name : cupboard_2
+    door_position_x : 4200
+    door_position_y : -250
+
+- phd_room_1:
+    position_x : 5400
+    position_y : -1000
+    length : 900
+    height : 920
+    name : 2.36
+    door_position_x : 4200
+    door_position_y : -250
 
