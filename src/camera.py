@@ -99,10 +99,10 @@ class CameraGroup(pygame.sprite.Group):
 
         # active elements
         for sprite in self.sprites():
-            if (sprite.rect.x <= self.camera_rect.center[0] + 1000 and 
-                sprite.rect.x >= self.camera_rect.center[0] - 1000 and
-                sprite.rect.y <= self.camera_rect.center[1] + 600 and
-                sprite.rect.y >= self.camera_rect.center[1] - 600
+            if (sprite.rect.x <= self.camera_rect.center[0] + 1100 and 
+                sprite.rect.x >= self.camera_rect.center[0] - 1100 and
+                sprite.rect.y <= self.camera_rect.center[1] + 650 and
+                sprite.rect.y >= self.camera_rect.center[1] - 650
             ):
                 offset_pos = sprite.rect.topleft - self.offset
                 self.display_surface.blit(sprite.image, offset_pos)

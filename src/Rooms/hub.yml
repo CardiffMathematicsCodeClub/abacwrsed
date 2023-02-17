@@ -1,44 +1,44 @@
 - 2.50:
     position_x : 0
-    position_y : -1000
+    position_y : -1200
     length : 550
     height : 780
     name : 2.50
     door_position_x : 200
-    door_position_y : -250
+    door_position_y : -450
 
 - 2.49:
     position_x : 550
-    position_y : -1000
+    position_y : -1200
     length : 550
     height : 780
     name : 2.49
     door_position_x : 750
-    door_position_y : -250
+    door_position_y : -450
 
 - 2.48:
     position_x : 1100
-    position_y : -1000
+    position_y : -1200
     length : 550
     height : 780
     name : 2.49
     door_position_x : 1400
-    door_position_y : -250
+    door_position_y : -450
 
 - 2.47:
     position_x : 1650
-    position_y : -1000
+    position_y : -1200
     length : 550
     height : 780
     name : 2.49
     door_position_x : 1950
-    door_position_y : -250
+    door_position_y : -450
 
 - upper_left_boundary:
     position_x : 0
-    position_y : -250
+    position_y : -450
     length : 0
-    height : 600
+    height : 800
     name : boundary
     # TODO: Find a better way to handle the absence of a door in a room
     door_position_x : -10000
@@ -66,7 +66,7 @@
     position_x : 1300
     position_y : 830
     length : 1300
-    height : 1700
+    height : 1720
     name : 2.53
     door_position_x : 1300
     door_position_y : 950
@@ -318,47 +318,73 @@
 # TODO: Break down this room into cupboard + lift + stairs + extra room
 - left_elevator_room:
     position_x : 2200
-    position_y : -1000
+    position_y : -1200
     length : 2200
     height : 1040
     name : elevator_room
     # TODO: The door needs to be larger
     door_position_x : 4000
-    door_position_y : -80
+    door_position_y : -280
 
 - bathroom_left_1:
     position_x : 4200
-    position_y : -1000
+    position_y : -1200
     length : 800
     height : 580
     name : bathroom_left
     door_position_x : 4300
-    door_position_y : -420
+    door_position_y : -620
 
 - bathroom_left_2:
     position_x : 4600
-    position_y : -420
+    position_y : -620
     length : 400
     height : 340
     name : bathroom_left_small
     door_position_x : 4600
-    door_position_y : -250
+    door_position_y : -450
 
 - cupboard_2:
     position_x : 5000
-    position_y : -1000
+    position_y : -1200
     length : 400
     height : 920
     name : cupboard_2
     door_position_x : 4200
-    door_position_y : -250
+    door_position_y : -450
 
 - phd_room_1:
     position_x : 5400
-    position_y : -1000
+    position_y : -1200
     length : 900
     height : 920
     name : 2.36
     door_position_x : 4200
-    door_position_y : -250
+    door_position_y : -450
 
+- photocopier_defense:
+    position_x : 2460
+    position_y : 220
+    length : 140
+    height : 1
+    name : water_fountain_defense
+    door_position_x : -10000
+    door_position_y : -10000
+
+- 2.44:
+    position_x : 2600
+    position_y : 220
+    length : 780
+    height : 1100
+    name : 2.44
+    door_position_x : 2720
+    door_position_y : 220
+
+- 2.62:
+    position_x : 2600
+    position_y : 1320
+    length : 780
+    height : 1230
+    name : 2.62
+    door_position_x : 3260
+    door_position_y : 2550
