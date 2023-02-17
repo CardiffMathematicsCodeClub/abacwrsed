@@ -1,39 +1,4 @@
-- 2.50:
-    position_x : 0
-    position_y : -1200
-    length : 550
-    height : 780
-    name : 2.50
-    door_position_x : 200
-    door_position_y : -450
-
-- 2.49:
-    position_x : 550
-    position_y : -1200
-    length : 550
-    height : 780
-    name : 2.49
-    door_position_x : 750
-    door_position_y : -450
-
-- 2.48:
-    position_x : 1100
-    position_y : -1200
-    length : 550
-    height : 780
-    name : 2.49
-    door_position_x : 1400
-    door_position_y : -450
-
-- 2.47:
-    position_x : 1650
-    position_y : -1200
-    length : 550
-    height : 780
-    name : 2.49
-    door_position_x : 1950
-    door_position_y : -450
-
+#Left side
 - upper_left_boundary:
     position_x : 0
     position_y : -450
@@ -107,6 +72,7 @@
     door_position_x : 0
     door_position_y : 0
 
+#Bottom side
 - 2.57:
     position_x : 0
     position_y : 2850
@@ -314,54 +280,7 @@
     door_position_x : 14610
     door_position_y : 2850
 
-
-# TODO: Break down this room into cupboard + lift + stairs + extra room
-- left_elevator_room:
-    position_x : 2200
-    position_y : -1200
-    length : 2200
-    height : 1040
-    name : elevator_room
-    # TODO: The door needs to be larger
-    door_position_x : 4000
-    door_position_y : -280
-
-- bathroom_left_1:
-    position_x : 4200
-    position_y : -1200
-    length : 800
-    height : 580
-    name : bathroom_left
-    door_position_x : 4300
-    door_position_y : -620
-
-- bathroom_left_2:
-    position_x : 4600
-    position_y : -620
-    length : 400
-    height : 340
-    name : bathroom_left_small
-    door_position_x : 4600
-    door_position_y : -450
-
-- cupboard_2:
-    position_x : 5000
-    position_y : -1200
-    length : 400
-    height : 920
-    name : cupboard_2
-    door_position_x : 4200
-    door_position_y : -450
-
-- phd_room_1:
-    position_x : 5400
-    position_y : -1200
-    length : 900
-    height : 920
-    name : 2.36
-    door_position_x : 4200
-    door_position_y : -450
-
+#Middle
 - photocopier_defense:
     position_x : 2460
     position_y : 220
@@ -397,3 +316,159 @@
     name : 2.36
     door_position_x : 5735, 3500
     door_position_y : 220, 2560
+    
+#Top side
+- 2.50:
+    position_x : 0
+    position_y : -1200
+    length : 550
+    height : 780
+    name : 2.50
+    door_position_x : 200
+    door_position_y : -450
+
+- 2.49:
+    position_x : 550
+    position_y : -1200
+    length : 550
+    height : 780
+    name : 2.49
+    door_position_x : 750
+    door_position_y : -450
+
+- 2.48:
+    position_x : 1100
+    position_y : -1200
+    length : 550
+    height : 780
+    name : 2.49
+    door_position_x : 1400
+    door_position_y : -450
+
+- 2.47:
+    position_x : 1650
+    position_y : -1200
+    length : 550
+    height : 780
+    name : 2.49
+    door_position_x : 1950
+    door_position_y : -450
+
+- left_elevator_room:
+    position_x : 2200
+    position_y : -1200
+    length : 1955
+    height : 1012
+    name : left_elevator_room
+    door_position_x : -10000
+    door_position_y : -10000
+
+- bathroom_left:
+    position_x : 4155
+    position_y : -1200
+    length : 860
+    height : 1012
+    name : bathroom_left
+    door_position_x : -10000
+    door_position_y : -10000
+
+- cupboard_phd_left:
+    position_x : 5015
+    position_y : -1200
+    length : 275
+    height : 1012
+    name : cupboard
+    door_position_x : -10000
+    door_position_y : -10000
+
+- phd_room_left:
+    position_x : 5290
+    position_y : -1200
+    length : 1375
+    height : 1012
+    name : 2.36
+    door_position_x : -10000
+    door_position_y : -10000
+
+- waiting_area:
+    position_x : 6665
+    position_y : -1200
+    length : 1720
+    height : 1012
+    name : waiting_area
+    door_position_x : -10000
+    door_position_y : -10000
+
+- phd_room_right:
+    position_x : 8385
+    position_y : -1200
+    length : 1375
+    height : 1012
+    name : 2.36
+    door_position_x : -10000
+    door_position_y : -10000
+
+- cupboard_phd_right:
+    position_x : 9760
+    position_y : -1200
+    length : 275
+    height : 1012
+    name : cupboard
+    door_position_x : -10000
+    door_position_y : -10000
+
+- bathroom_right:
+    position_x : 10035
+    position_y : -1200
+    length : 860
+    height : 1012
+    name : bathroom_left
+    door_position_x : -10000
+    door_position_y : -10000
+
+- right_elevator_room:
+    position_x : 10895
+    position_y : -1200
+    length : 1955
+    height : 1012
+    name : left_elevator_room
+    door_position_x : -10000
+    door_position_y : -10000
+
+- 2.22:
+    position_x : 12850
+    position_y : -1200
+    length : 550
+    height : 780
+    name : 2.22
+    door_position_x : -10000
+    door_position_y : -10000
+
+- 2.21:
+    position_x : 13400
+    position_y : -1200
+    length : 550
+    height : 780
+    name : 2.21
+    door_position_x : -10000
+    door_position_y : -10000
+
+- 2.20:
+    position_x : 13950
+    position_y : -1200
+    length : 550
+    height : 780
+    name : 2.20
+    door_position_x : -10000
+    door_position_y : -10000
+
+- 2.19:
+    position_x : 14500
+    position_y : -1200
+    length : 550
+    height : 780
+    name : 2.19
+    door_position_x : -10000
+    door_position_y : -10000
+
+#Right side
