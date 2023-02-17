@@ -32,43 +32,49 @@ def get_building_parameters(config_path):
             position = (int(room_parameters['position_x']), int(room_parameters['position_y']))
             length = int(room_parameters['length'])
             height = int(room_parameters['height'])
-            door_position = (int(room_parameters['door_position_x']), int(room_parameters['door_position_y']))
-            parameters[room_id] = (position, length, height, door_position)
+            try:
+                door_positions = [(int(room_parameters['door_position_x']), int(room_parameters['door_position_y']))]
+            except ValueError:
+                door_positions = []
+                for x, y in zip(room_parameters['door_position_x'].split(","), room_parameters['door_position_y'].split(",")):
+                    door_positions.append((int(x), int(y)) )
+            parameters[room_id] = (position, length, height, door_positions)
 
     return parameters
 
 
-def door_in_the_way(x, y, door_position, door_width=1):
+def door_in_the_way(x, y, door_positions, door_width=1):
     """
     Checks if the position is a door position
     """
-    if door_position[0] is None or door_position[1] is None:
-        return False
-    if (
-        x >= door_position[0] - door_width * 70 and
-        x <= door_position[0] + door_width * 70 and
-        y >= door_position[1] - door_width * 70 and
-        y <= door_position[1] + door_width * 70
-    ):
-        return True
+    for door_position in door_positions:
+        if door_position[0] is None or door_position[1] is None:
+            return False
+        if (
+            x >= door_position[0] - door_width * 70 and
+            x <= door_position[0] + door_width * 70 and
+            y >= door_position[1] - door_width * 70 and
+            y <= door_position[1] + door_width * 70
+        ):
+            return True
     return False
 
 
-def building_configuration(boxes, camera_group, position, length, height, door_position):
+def building_configuration(boxes, camera_group, position, length, height, door_positions):
     """
     Builds a room from position, length and height
     """
-    x, y = position
 
+    x, y = position
     for dx in range(0, length, 70):
-        if not door_in_the_way(x + dx, y, door_position):
+        if not door_in_the_way(x + dx, y, door_positions):
             boxes.add(Wall_H(x + dx, y, camera_group))
-        if not door_in_the_way(x + dx, y + height, door_position):
+        if not door_in_the_way(x + dx, y + height, door_positions):
             boxes.add(Wall_H(x + dx, y + height, camera_group))
     for dy in range(0, height, 70):
-        if not door_in_the_way(x, y + dy, door_position, door_width=1.5):
+        if not door_in_the_way(x, y + dy, door_positions, door_width=1.5):
             boxes.add(Wall_V(x, y + dy, camera_group))
-        if not door_in_the_way(x + length, y + dy, door_position, door_width=1.5):
+        if not door_in_the_way(x + length, y + dy, door_positions, door_width=1.5):
             boxes.add(Wall_V(x + length, y + dy, camera_group))
         
     return boxes
@@ -103,8 +109,8 @@ def create_custom_walls(camera_group):
 
     config_path = "./rooms/hub.yml"
     parameters = get_building_parameters(config_path=config_path)
-    for _, (position, length, height, door_position) in parameters.items():
-        boxes.add(building_configuration(boxes=boxes, camera_group=camera_group, position=position, length=length, height=height, door_position=door_position))
+    for _, (position, length, height, door_positions) in parameters.items():
+        boxes.add(building_configuration(boxes=boxes, camera_group=camera_group, position=position, length=length, height=height, door_positions=door_positions))
 
     collectibles = place_collectibles(collectibles=collectibles, camera_group=camera_group)
     environment = place_environment_objects(environment=environment, camera_group=camera_group)

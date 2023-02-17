@@ -367,7 +367,7 @@
     position_y : 220
     length : 140
     height : 1
-    name : water_fountain_defense
+    name : photocopier_defense
     door_position_x : -10000
     door_position_y : -10000
 
@@ -388,3 +388,12 @@
     name : 2.62
     door_position_x : 3260
     door_position_y : 2550
+
+- 2.36:
+    position_x : 3380
+    position_y : 220
+    length : 2475
+    height : 2340
+    name : 2.36
+    door_position_x : 5735, 3500
+    door_position_y : 220, 2560
