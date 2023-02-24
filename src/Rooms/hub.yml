@@ -27,6 +27,7 @@
     door_position_x : 780
     door_position_y : 800
 
+# TODO: Maybe the corridor here is too wide?
 - 2.53:
     position_x : 1300
     position_y : 830
@@ -316,7 +317,7 @@
     name : 2.36
     door_position_x : 5735, 3500
     door_position_y : 220, 2560
-    
+
 #Top side
 - 2.50:
     position_x : 0
@@ -360,17 +361,26 @@
     length : 1955
     height : 1012
     name : left_elevator_room
-    door_position_x : -10000
-    door_position_y : -10000
+    door_position_x : 4040, 3915
+    door_position_y : -188, -188
 
-- bathroom_left:
+- bathroom_left_1:
     position_x : 4155
     position_y : -1200
     length : 860
-    height : 1012
+    height : 580
     name : bathroom_left
-    door_position_x : -10000
-    door_position_y : -10000
+    door_position_x : 4270
+    door_position_y : -620
+
+- bathroom_left_2:
+    position_x : 4600
+    position_y : -620
+    length : 400
+    height : 340
+    name : bathroom_left_small
+    door_position_x : 4600
+    door_position_y : -450
 
 - cupboard_phd_left:
     position_x : 5015
@@ -378,8 +388,8 @@
     length : 275
     height : 1012
     name : cupboard
-    door_position_x : -10000
-    door_position_y : -10000
+    door_position_x : 5290
+    door_position_y : -1050
 
 - phd_room_left:
     position_x : 5290
@@ -387,14 +397,14 @@
     length : 1375
     height : 1012
     name : 2.36
-    door_position_x : -10000
-    door_position_y : -10000
+    door_position_x : 5290, 5390, 6665
+    door_position_y : -1050, -188, -350
 
 - waiting_area:
     position_x : 6665
     position_y : -1200
     length : 1720
-    height : 1012
+    height : 0
     name : waiting_area
     door_position_x : -10000
     door_position_y : -10000
@@ -472,3 +482,75 @@
     door_position_y : -10000
 
 #Right side
+- upper_right_boundary:
+    position_x : 15050
+    position_y : -450
+    length : 0
+    height : 800
+    name : boundary
+    # TODO: Find a better way to handle the absence of a door in a room
+    door_position_x : -10000
+    door_position_y : -10000
+
+- water_fountain_defense_right:
+    position_x : 14270
+    position_y : 220
+    length : 1
+    height : 140
+    name : water_fountain_defense_right
+    door_position_x : -10000
+    door_position_y : -10000
+
+- 2.18:
+    position_x : 14270
+    position_y : 350
+    length : 780
+    height : 550
+    name : 2.18
+    door_position_x : 14270
+    door_position_y : 500
+
+- complex_of_rooms_right:
+    position_x : 12450
+    position_y : 830
+    length : 1300
+    height : 1720
+    name : 2.24, 2.14, 2.15
+    door_position_x : -10000
+    door_position_y : -10000
+
+- 2.17:
+    position_x : 14270
+    position_y : 900
+    length : 780
+    height : 550
+    name : 2.17
+    door_position_x : 14270
+    door_position_y : 1050
+
+- 2.13:
+    position_x : 14270
+    position_y : 1450
+    length : 780
+    height : 550
+    name : 2.13
+    door_position_x : 14270
+    door_position_y : 1600
+
+- 2.12:
+    position_x : 14270
+    position_y : 2000
+    length : 780
+    height : 550
+    name : 2.12
+    door_position_x : 14270
+    door_position_y : 2150
+
+- lower_right_boundary:
+    position_x : 15050
+    position_y : 2550
+    length : 0
+    height : 300
+    name : boundary
+    door_position_x : -10000
+    door_position_y : -10000
