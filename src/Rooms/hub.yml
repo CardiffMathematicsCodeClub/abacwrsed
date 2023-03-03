@@ -376,8 +376,8 @@
 - bathroom_left_2:
     position_x : 4600
     position_y : -620
-    length : 400
-    height : 340
+    length : 412
+    height : 432
     name : bathroom_left_small
     door_position_x : 4600
     door_position_y : -450
@@ -415,8 +415,8 @@
     length : 1375
     height : 1012
     name : 2.36
-    door_position_x : -10000
-    door_position_y : -10000
+    door_position_x : 8385, 9480, 9760
+    door_position_y : -350, -188, -1050
 
 - cupboard_phd_right:
     position_x : 9760
@@ -424,26 +424,35 @@
     length : 275
     height : 1012
     name : cupboard
-    door_position_x : -10000
-    door_position_y : -10000
+    door_position_x : 9760
+    door_position_y : -1050
 
-- bathroom_right:
+- bathroom_right_1:
     position_x : 10035
     position_y : -1200
     length : 860
-    height : 1012
-    name : bathroom_left
-    door_position_x : -10000
-    door_position_y : -10000
+    height : 580
+    name : bathroom_right
+    door_position_x : 10725
+    door_position_y : -620
+
+- bathroom_right_2:
+    position_x : 10035
+    position_y : -620
+    length : 412
+    height : 432
+    name : bathroom_right_small
+    door_position_x : 10447
+    door_position_y : -450
 
 - right_elevator_room:
     position_x : 10895
     position_y : -1200
     length : 1955
     height : 1012
-    name : left_elevator_room
-    door_position_x : -10000
-    door_position_y : -10000
+    name : right_elevator_room
+    door_position_x : 11035, 11160
+    door_position_y : -188, -188
 
 - 2.22:
     position_x : 12850
@@ -451,8 +460,8 @@
     length : 550
     height : 780
     name : 2.22
-    door_position_x : -10000
-    door_position_y : -10000
+    door_position_x : 13275
+    door_position_y : -450
 
 - 2.21:
     position_x : 13400
@@ -460,8 +469,8 @@
     length : 550
     height : 780
     name : 2.21
-    door_position_x : -10000
-    door_position_y : -10000
+    door_position_x : 13470
+    door_position_y : -450
 
 - 2.20:
     position_x : 13950
@@ -469,8 +478,8 @@
     length : 550
     height : 780
     name : 2.20
-    door_position_x : -10000
-    door_position_y : -10000
+    door_position_x : 14020
+    door_position_y : -450
 
 - 2.19:
     position_x : 14500
@@ -478,8 +487,8 @@
     length : 550
     height : 780
     name : 2.19
-    door_position_x : -10000
-    door_position_y : -10000
+    door_position_x : 14570
+    door_position_y : -450
 
 #Right side
 - upper_right_boundary:
