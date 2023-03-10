@@ -1,5 +1,6 @@
 import pygame, numpy
 import math
+import sys
 
 from camera import CameraGroup
 from player import Player
@@ -10,9 +11,10 @@ HEIGHT = 1080
 BACKGROUND = (50, 0, 0)
 PLAYER_START_X = 1000
 PLAYER_START_Y = 1000
+DEFAULT_SPEED = 8
 
 
-def main():
+def main(speed=DEFAULT_SPEED):
     pygame.init()
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
     clock = pygame.time.Clock()
@@ -21,7 +23,9 @@ def main():
     boxes, collectibles, environment = create_custom_walls(camera_group=camera_group)
 
     player = Player(
-        startx=PLAYER_START_X, starty=PLAYER_START_Y, group=camera_group, boxes=boxes, collectibles=collectibles, environment=environment
+        startx=PLAYER_START_X, starty=PLAYER_START_Y, group=camera_group,
+        boxes=boxes, collectibles=collectibles, environment=environment,
+        speed=speed,
     )
 
     while True:
@@ -36,4 +40,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if "debug" in sys.argv:
+        main(speed=50)
+    else:
+        main()

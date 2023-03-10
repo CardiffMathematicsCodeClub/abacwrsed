@@ -10,6 +10,7 @@ from terrain import (
     SadBarrier,
     HappyBarrier,
     Collectible,
+    SecondBox,
 )
 
 def get_building_parameters(config_path):
@@ -87,6 +88,7 @@ def place_collectibles(collectibles, camera_group):
     collectibles.add(Collectible(300, 1100, camera_group))
     collectibles.add(Collectible(400, 1100, camera_group))
     collectibles.add(Collectible(500, 1100, camera_group))
+    collectibles.add(SecondBox(500, 600, camera_group))
     return collectibles
 
 

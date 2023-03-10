@@ -1,5 +1,6 @@
 import pygame
 
+import inventory
 
 class Sprite(pygame.sprite.Sprite):
     """
@@ -87,7 +88,14 @@ class Collectible(Sprite):
     """
     def __init__(self, startx, starty, group):
         super().__init__("Graphics/terrain/boxAlt.png", startx, starty, group)
+        self.item = inventory.Box()
 
     def event(self, player):
+        player.bag.put(self.item)
         self.kill()
 
+
+class SecondBox(Collectible):
+    def __init__(self, startx, starty, group):
+        super().__init__(startx, starty, group)
+        self.item = inventory.SecondBox()

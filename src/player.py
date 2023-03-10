@@ -2,6 +2,8 @@ import math
 import numpy as np
 import pygame
 
+import inventory
+
 SQUARE_ROOT_OF_TWO = math.sqrt(2)
 
 
@@ -10,7 +12,8 @@ class Player(pygame.sprite.Sprite):
     The Player class where the player is defined. The player is a sprite that
     can move around the map and interact with the environment.
     """
-    def __init__(self, startx, starty, group, boxes, collectibles, environment):
+    def __init__(self, startx, starty, group, boxes, collectibles, environment,
+            speed=8):
         super().__init__(group)
 
         self.stand_image = pygame.image.load(
@@ -34,8 +37,10 @@ class Player(pygame.sprite.Sprite):
         self.animation_index = 0
         self.facing_left = False
 
-        self.speed = 8
+        self.speed = speed
         self.prev_key = pygame.key.get_pressed()
+
+        self.bag = inventory.Bag()
 
     def walk_animation(self):
         """
